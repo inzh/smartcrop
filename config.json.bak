@@ -1,0 +1,10 @@
+{
+  "baidu" : {
+    "AK" : "API Key",
+    "SK" : "Secret Key"
+  },
+  "ali" : {
+    "AK" : "AccessKey ID",
+    "SK" : "AccessKey Secret"
+  }
+}
