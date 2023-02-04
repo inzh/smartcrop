@@ -255,7 +255,7 @@ const exportFull = () => {
     </div>
 
     <div class="menuBtn">
-      <span style="margin-right: 20px;">是否开启阿里去除背景</span>
+      <span style="margin-right: 20px;">是否开启去除背景</span>
       <el-switch v-model="openAliRmbg" size="large" inline-prompt active-text="开启" inactive-text="关闭" />
       <div style="display: flex; justify-content: center; width: 300px; margin-top: 10px;">
         <el-button type="primary" @click="onekeyHandle">一键处理</el-button>
