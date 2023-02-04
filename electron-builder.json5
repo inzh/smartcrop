@@ -14,7 +14,7 @@
   ],
   "extraResources":  { 
         "from": "./config.json",
-        "to": "./config.json"
+        "to": "../config.json"
   },
   "mac": {
     "artifactName": "${productName}_${version}.${ext}",

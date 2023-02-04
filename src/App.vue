@@ -224,7 +224,7 @@ const exportFull = () => {
     <div id="pdfdom">
       <div class="front-card">
         <h2>身份证正面</h2><el-button text type="primary" :disabled="controlExport" @click="exportFront">导出</el-button>
-        <el-upload :class="{ hideupload: hideUploadFront }" accept=".jpg,.jpeg,.png,.JPG,.JPEG" action="#"
+        <el-upload :class="{ hideupload: hideUploadFront }" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.jfif" action="#"
           :auto-upload="false" :drag="true" list-type="picture-card" :on-preview="handlePictureCardPreviewFront"
           :on-change="handleChangeFront" :on-remove="handleRemoveFront" ref="frontref">
           <el-icon>
@@ -239,7 +239,7 @@ const exportFull = () => {
       </div>
       <div class="back-card">
         <h2>身份证反面</h2><el-button text type="primary" :disabled="controlExport" @click="exportBack">导出</el-button>
-        <el-upload :class="{ hideupload: hideUploadBack }" accept=".jpg,.jpeg,.png,.JPG,.JPEG" action="#"
+        <el-upload :class="{ hideupload: hideUploadBack }" accept=".jpg,.jpeg,.png,.JPG,.JPEG.jfif" action="#"
           :auto-upload="false" :drag="true" list-type="picture-card" :on-preview="handlePictureCardPreviewBack"
           :on-change="handleChangeBack" :on-remove="handleRemoveBack" ref="backref">
           <el-icon>
