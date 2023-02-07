@@ -4,7 +4,7 @@ import { ref, computed } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
 import { ElMessage, UploadInstance } from 'element-plus'
 import type { UploadProps } from 'element-plus'
-import { html2Base64, html2Print } from './util/html2Base64AndPrint'
+import { html2Base64, html2Print, html2PDF } from './util/html2Base64AndPrint'
 import blobToBase64 from './util/blobToBase64'
 import handleMain from './util/handleMain'
 
@@ -217,6 +217,10 @@ const exportFull = () => {
   exportPNG(finalResBase64.value, cardName.value + '.jpg')
 }
 
+const exportPDF = () => {
+  html2PDF('.result', cardName.value)
+}
+
 </script>
 
 <template>
@@ -239,7 +243,7 @@ const exportFull = () => {
       </div>
       <div class="back-card">
         <h2>身份证反面</h2><el-button text type="primary" :disabled="controlExport" @click="exportBack">导出</el-button>
-        <el-upload :class="{ hideupload: hideUploadBack }" accept=".jpg,.jpeg,.png,.JPG,.JPEG.jfif" action="#"
+        <el-upload :class="{ hideupload: hideUploadBack }" accept=".jpg,.jpeg,.png,.JPG,.JPEG,.jfif" action="#"
           :auto-upload="false" :drag="true" list-type="picture-card" :on-preview="handlePictureCardPreviewBack"
           :on-change="handleChangeBack" :on-remove="handleRemoveBack" ref="backref">
           <el-icon>
@@ -267,7 +271,10 @@ const exportFull = () => {
           <el-button type="info" plain @click="handlePreview" :disabled="controlBtn">预览</el-button>
         </div>
         <div class="cbt">
-          <el-button type="info" plain @click="exportFull" :disabled="controlBtn">导出</el-button>
+          <el-button type="info" plain @click="exportFull" :disabled="controlBtn">PNG</el-button>
+        </div>
+        <div class="">
+          <el-button type="info" plain @click="exportPDF" :disabled="controlBtn">PDF</el-button>
         </div>
         <div class="">
           <el-button type="info" plain @click="print" :disabled="controlBtn">打印</el-button>
